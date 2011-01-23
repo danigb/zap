@@ -1,0 +1,25 @@
+<%= title t('.title') %>
+
+<div class="actions">
+  <%= link_to 'Nuevo participante', new_user_path %>
+</div>
+
+<table>
+  <%= thead_for Zap::User, :avatar, :name, :description, :roles, :actions %>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr class="<%= cycle('even', 'odd') %>">
+        <td class="avatar"><%= image_tag avatar_url(user) %></td>
+        <td><%= link_to user.name, user %></td>
+        <td><%= user.email %></td>
+        <td><%= user.roles %></td>
+        <td class="actions">
+          <%= link_to 'Editar', [:edit, user] %>
+          <%= link_to 'Borrar', user, :method => :delete,
+            :confirm => "Quieres borrar el usuario '#{user.name}'!! No se puede volver atrás!!. ¿Segura?" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

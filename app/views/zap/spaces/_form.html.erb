@@ -1,0 +1,9 @@
+<%= simple_form_for(@space) do |form| %>
+  <div class="inputs">
+    <%= form.input :name %>
+    <%= form.input :description %>
+  </div>
+  <div class="controls">
+    <%= form.submit %><%= cancel_submit @space %>
+  </div>
+<% end %>

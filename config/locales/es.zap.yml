@@ -1,0 +1,56 @@
+es:
+  activerecord:
+    models:
+      zap:
+        space: "espacio"
+        user: "Participante"
+        authorization:
+          one: 'Autorizacion'
+          other: 'Authorizaciones'
+        membership:
+          one: 'Afiliacion'
+          other: 'Afiliaciones'
+    attributes:
+      zap:
+        authorization:
+          provider: 'Proveedor'
+          created_at: 'Creado hace'
+        space:
+          name: 'Nombre'
+          description: 'Descripción'
+
+  zap:
+    actions:
+      add: "Añadir"
+      edit: "Editar"
+      login: "Entrar"
+      logout: "Salir"
+    collection:
+      spaces: "Espacios"
+    model:
+      space: "Espacio"
+      
+    users:
+      index:
+        title: "Participantes"
+      new:
+        title: "Alta de participante"
+    spaces:
+      index:
+        title: "Espacios"
+        new: "Crear espacio"
+      new:
+        title: "Crear nuevo espacio"
+      show:
+        title: "Espacio '%{name}'"
+      edit:
+        title: "Editando espacio '%{name}'"
+
+  flash:
+    actions:
+      create:
+        notice: "El %{resource_name} ha sido creado."
+      update:
+        notice: "El %{resource_name} ha sido modificado."
+      destroy:
+        notice: "El %{resource_name} ha sido borrado."

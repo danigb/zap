@@ -1,0 +1,11 @@
+<%= title 'Identificarse' %>
+<p>Para identificarse en booka no hace falta crear una cuenta nueva: simplemente
+  usa la identidad de cualquiera de estos servicios (se añadirán más
+  próximamente).</p>
+<p>La única información que se solicita a ese servicio es tu nombre y correo electrónico:
+  <b>ninguna</b> otra información es accesible, por lo que la
+  privacidad está garantizada.</p>
+<p>
+  <%= link_to 'Entrar con mi cuenta de google (gmail, etcétera)', '/auth/google', :id => 'google_auth' %><br/>
+  <%= link_to 'Entrar con mi cuenta de OpenId', '/auth/open_id' %><br/>
+</p>

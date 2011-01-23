@@ -1,0 +1,20 @@
+<%= title t('.title') %>
+
+<div class="actions">
+  <%= link_to t('.new'), new_space_path %>
+</div>
+
+<table>
+  <%= thead_for Zap::Space, :name, :description, :actions %>
+  <tbody>
+    <% @spaces.each do |space| %>
+    <tr>
+      <td><%= link_to space.name, space %></td>
+      <td><%= truncate space.description %></td>
+      <td class="actions">
+        <%= link_to t('zap.actions.edit'), [:edit, space] %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

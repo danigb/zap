@@ -1,0 +1,13 @@
+<%= title t('.title', :name => @space.name) %>
+
+<%= actions :div, @space %>
+
+<%= properties do %>
+  <%= property @space, :name %>
+  <%= property @space, :description %>
+<% end %>
+
+<%= render :partial => 'zap/memberships/section', :locals => {:model => @space} %>
+
+
+
