@@ -1,5 +1,5 @@
 class Zap::User < ActiveRecord::Base
-#  include SentientUser
+  include SentientUser
   
   set_table_name 'users'
   has_many :authorizations

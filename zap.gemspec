@@ -26,6 +26,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'simple_form', '>= 1.3.0'
   s.add_dependency 'responders', '>= 0.6.2'
   s.add_dependency 'omniauth', '>= 0.1.6'
-  #s.add_dependency 'sentient_user', '>= 0.3.2'
-  #s.add_dependency 'simple_audit', '>= 0.1.1'
+  s.add_dependency 'sentient_user', '>= 0.3.2'
+  s.add_dependency 'simple_audit', '>= 0.1.1'
 end

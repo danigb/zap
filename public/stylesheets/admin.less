@@ -95,3 +95,34 @@ form .input label {float: left; width: 9.5em; text-align: right; padding-right: 
 form .controls {width: 100%; overflow: hidden; margin: 1em 0 0 10em;}
 form .controls input[type=submit] {padding: 2px 1em; margin-right: 0.5em;}
 input[type=text], input[type=email], input[type=url] {border: 1px solid @grey; padding: 1px 2px;}
+
+
+
+/** AUDITS **/
+.audits {
+  clear: both;
+}
+.audit {
+  -moz-border-radius:8px;
+  -webkit-border-radius: 8px;
+  background-color: #efefef;
+  padding: 6px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.audit .action, .audit .user, .audit .timestamp{
+  float: left;
+  margin-right: 6px;
+}
+.audit .changes {
+  clear: both;
+  white-space: pre;
+}
+
+.audit .current {
+  margin-left: 6px;
+}
+.audit .previous {
+  margin-left: 6px;
+  text-decoration: line-through;
+}  

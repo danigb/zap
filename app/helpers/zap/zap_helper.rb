@@ -42,7 +42,7 @@ module Zap::ZapHelper
       content_tag(tag, :class => "actions", &block)
     else
       content_tag(tag, :class => 'actions') do
-        concat(link_to t('zap.actions.edit'), polymorphic_path(model))
+        concat(link_to t('zap.actions.edit'), polymorphic_path([:edit, model]))
       end
     end
   end

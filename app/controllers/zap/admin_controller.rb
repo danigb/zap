@@ -8,6 +8,9 @@ class Zap::AdminController < ApplicationController
   self.responder = Zap::ZapResponder
   respond_to :html, :xml, :json
   before_filter :require_admin
+  before_filter do |c|
+    Zap::User.current = c.send(:current_user)
+  end
   
   def resource_class
     self.class.name[0..-12].constantize

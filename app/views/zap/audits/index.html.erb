@@ -1,0 +1,13 @@
+<%= title t('.title') %>
+
+
+<table>
+  <% @audits.each do |audit| %>
+  <tr>
+    <td><%= audit.action %></td>
+    <td><%= audit.username %></td>
+    <td><%= audit.created_at %></td>
+    <td><%= audit.change_log %></td>
+  </tr>
+  <% end %>
+</table>

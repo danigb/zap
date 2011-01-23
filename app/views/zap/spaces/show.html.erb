@@ -9,5 +9,8 @@
 
 <%= render :partial => 'zap/memberships/section', :locals => {:model => @space} %>
 
+<%= section_for :audits %>
+<%= render_audits @space %>
+
 
 
