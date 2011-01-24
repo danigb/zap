@@ -13,14 +13,14 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 .debug {border: 1px solid red;}
 .rounded {-moz-border-radius: 3px; -webkit-border-radius: 3px; }
 .zaptextshadow {text-shadow: 0 1px 0 #B3BFD3;}
-
+.zaptextbshadow {text-shadow: 0 1px 0 #B3BFD3;}
 html {
   font-size: 90%;
   font-family: 'Ubuntu', arial, serif;
   background-color: #f0f0f0;
 }
 ul {list-style-type: none;}
-a {color: black; text-decoration: none;}
+a {color: black; text-decoration: none; .zaptextshadow;}
 h1 {font-size: 150%; .zaptextshadow;}
 h2.section {font-size: 130%; margin-top: 1em; .zaptextshadow; clear: both;}
 
@@ -28,6 +28,7 @@ h2.section {font-size: 130%; margin-top: 1em; .zaptextshadow; clear: both;}
 table {width: 100%;}
 table td {padding: 1px 3px;}
 thead {border-bottom: 1px solid @grey;}
+tr.odd {background-color: #f0f0f0; .rounded;}
 
 /** SESSION **/
 #session {text-align: right; width: 880px;.zaptextshadow;}
@@ -35,7 +36,7 @@ thead {border-bottom: 1px solid @grey;}
 /** SITEBAR **/
 #sitebar ul {margin-top: 50px;border-bottom: 1px solid @grey;}
 #sitebar li {border-top: 1px solid @grey;}
-#sitebar li a {display: block; padding: 5px 15px; text-align: right;.zaptextshadow;}
+#sitebar li a {font-size: 90%; display: block; padding: 5px 15px; text-align: right;.zaptextshadow;}
 #sitebar li a:hover { background-color: @grey;}
 #sitebar li.top {font-size: 110%;}
 #sitebar li.top a {padding: 5px 5px;}
@@ -102,21 +103,11 @@ input[type=text], input[type=email], input[type=url] {border: 1px solid @grey; p
 .audits {
   clear: both;
 }
-.audit {
-  -moz-border-radius:8px;
-  -webkit-border-radius: 8px;
-  background-color: #efefef;
-  padding: 6px;
-  margin-bottom: 8px;
-  font-size: 12px;
-}
-.audit .action, .audit .user, .audit .timestamp{
-  float: left;
-  margin-right: 6px;
-}
+
 .audit .changes {
   clear: both;
   white-space: pre;
+  font-size: 80%;
 }
 
 .audit .current {

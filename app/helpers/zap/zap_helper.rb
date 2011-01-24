@@ -58,4 +58,15 @@ module Zap::ZapHelper
       content_tag(:label, "#{model.class.human_attribute_name(name)}:") + value
     end
   end
+
+  def render_audit_changes(current, older)
+    render = current.delta(older).collect do |k, v|
+      content_tag(:div) do
+        content_tag(:label, "#{current.class.human_attribute_name(k)}:") +
+          content_tag(:span, v.last, :class => 'current') +
+          content_tag(:span, v.first, :class => 'previous')
+      end
+    end
+    render.join.html_safe
+  end
 end

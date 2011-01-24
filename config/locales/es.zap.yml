@@ -21,6 +21,8 @@ es:
 
   zap:
     actions:
+      create: "Crear"
+      update: "Modificar"
       add: "Añadir"
       edit: "Editar"
       login: "Entrar"

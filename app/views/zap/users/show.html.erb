@@ -24,3 +24,9 @@
     </tr>
   <% end %>
 </table>
+
+<%= section_for :activity %>
+<%= render_audits @user %>
+
+<%= section_for :audits %>
+<%= render_audits @user %>

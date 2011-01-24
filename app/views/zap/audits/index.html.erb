@@ -2,12 +2,17 @@
 
 
 <table>
-  <% @audits.each do |audit| %>
-  <tr>
-    <td><%= audit.action %></td>
-    <td><%= audit.username %></td>
-    <td><%= audit.created_at %></td>
-    <td><%= audit.change_log %></td>
+  <%= thead_for Zap::Audit, :action, :model, :username, :created_at, :changes %>
+  <tbody>
+  <% @audits.each_with_index do |audit, index| %>
+  <% older_audit = @audits[index+1] %>
+  <tr class="audit <%= cycle('even', 'odd') %>">
+    <td><%= t("zap.actions.#{audit.action}") %></td>
+    <td><%= link_to "#{audit.auditable_type}(#{audit.auditable_id})", audit.auditable %></td>
+    <td><%= link_to audit.username, audit.user %></td>
+    <td><%= time_ago_in_words audit.created_at %></td>
+    <td class="changes"><%= render_audit_changes(audit,older_audit) if older_audit %></td>
   </tr>
   <% end %>
+  </tbody>
 </table>

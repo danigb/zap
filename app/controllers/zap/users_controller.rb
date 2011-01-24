@@ -32,5 +32,11 @@ class Zap::UsersController < Zap::AdminController
     @user.update_attributes(params[:user])
     respond_with(@user)
   end
+
+  def destroy
+    @user = Zap::User.find(params[:id])
+    @user.destroy
+    redirect_to users_path
+  end
 end
 
