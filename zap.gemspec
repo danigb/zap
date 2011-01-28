@@ -28,4 +28,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'omniauth', '>= 0.1.6'
   s.add_dependency 'sentient_user', '>= 0.3.2'
   s.add_dependency 'simple_audit', '>= 0.1.1'
+  s.add_dependency 'acts-as-taggable-on'
 end

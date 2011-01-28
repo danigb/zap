@@ -1,0 +1,16 @@
+<%= simple_form_for([@source, @permission]) do |form| %>
+  <div class="inputs">
+    <%= form.hidden_field :resource_id %><%= form.hidden_field :resource_type %>
+    <div class="input"><%= property @permission, :resource, @permission.resource.name %></div>
+    <% if @permission.new_record? %>
+      <%= form.association :user %>
+    <% else %>
+      <div class="input"><%= property @permission, :user, @permission.user.name %></div>
+    <% end %>
+
+    <%= form.input :level, :collection => Zap::Permission::LEVELS  %>
+  </div>
+  <div class="controls">
+    <%= form.submit %><%= cancel_submit @source %>
+  </div>
+<% end %>

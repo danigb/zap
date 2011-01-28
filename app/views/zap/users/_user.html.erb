@@ -1,0 +1,8 @@
+
+
+<%= div_for user, :class => "model #{cycle('even', 'odd')}" do %>
+  <%= actions_for user, current_user %>
+  <div class="avatar"><%= image_tag avatar_url(user) %></div>
+  <div class="name"><%= link_to user.name, user %></div>
+  <div class="property"><label>email: </label><%= user.email %></div>
+<% end %>

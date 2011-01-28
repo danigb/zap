@@ -1,0 +1,11 @@
+<%= simple_form_for([@source, @asset]) do |form| %>
+  <div class="inputs">
+    <%= form.hidden_field :space_id %>
+    <%= form.text_field :name %>
+    <%= form.association :user %>
+    <%= form.text_area :description %>
+  </div>
+  <div class="controls">
+    <%= form.submit %><%= cancel_submit @source %>
+  </div>
+<% end %>

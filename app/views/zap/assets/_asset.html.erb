@@ -1,0 +1,12 @@
+
+
+<%= div_for asset, :class => "model #{cycle('even', 'odd')}" do %>
+  <%= actions_for([resource,asset]) if resource %>
+  <div class="compact">
+    <div class="property"><label>Name: </label><%= asset.name %></div>
+    <div class="property"><label>Space: </label><%= link_to_space asset.space %></div>
+    <div class="property"><label>Owner: </label><%= link_to_user asset.user %></div>
+    <div class="property"><label>Description: </label><%= asset.description %></div>
+    <div class="property"><label>Locator: </label><%= asset.locator %></div>
+  </div>
+<% end %>

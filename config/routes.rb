@@ -1,14 +1,20 @@
 Zap::Engine.routes.draw do
 
   resources :users do
-    resources :memberships
+    resources :permissions
     resources :assets
     resources :activities
+    resources :comments
+    resources :properties
+    resources :tags
   end
   resources :spaces do
-    resources :memberships
+    resources :permissions
     resources :assets
     resources :activities
+    resources :comments
+    resources :properties
+    resources :tags
   end
   resources :audits
   resources :assets

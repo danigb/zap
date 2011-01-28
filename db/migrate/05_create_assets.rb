@@ -1,11 +1,11 @@
 class CreateAssets < ActiveRecord::Migration
   def self.up
     create_table :assets do |t|
-      t.references :user
-      t.references :project
-      t.string :name, :limit => 100
+      t.belongs_to :user
+      t.belongs_to :space
+      t.string :name, :limit => 200
       t.string :description, :limit => 500
-      t.string :asset
+      t.string :locator
       t.timestamps
     end
   end

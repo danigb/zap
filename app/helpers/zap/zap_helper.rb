@@ -9,13 +9,9 @@ module Zap::ZapHelper
   end
 
   def avatar_url(user, size = 48)
-    if user.avatar_url.present?
-      user.avatar_url
-    else
       email = user.email ? user.email.downcase : "nouser@plataformabooka.net"
       gravatar_id = Digest::MD5.hexdigest(email)
       "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=retro"
-    end
   end
 
   def breadcrumbs(model)
@@ -32,8 +28,9 @@ module Zap::ZapHelper
     end
   end
 
-  def section_for(name)
-    content_tag(:h2, name.to_s, :class => 'section')
+  def section_for(name, count = nil)
+    title = count.present? ? "#{name} (#{count})" : name.to_s
+    content_tag(:h2, title, :class => 'section')
   end
 
   def actions(tag = nil, model = nil, &block)
@@ -49,7 +46,7 @@ module Zap::ZapHelper
 
 
   def properties(&block)
-    content_tag(:ul, :class => "properties", &block)
+    content_tag(:div, content_tag(:ul, :class => "properties", &block), :class => 'container')
   end
 
   def property(model, name, value = nil)

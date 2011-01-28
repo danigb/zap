@@ -1,16 +1,36 @@
 <%= title t('.title', :name => @space.name) %>
 
-<%= actions :div, @space %>
+<%= actions_for @space %>
 
 <%= properties do %>
   <%= property @space, :name %>
   <%= property @space, :description %>
 <% end %>
 
-<%= render :partial => 'zap/memberships/section', :locals => {:model => @space} %>
+<%= section_for :permissions, @space.permissions.count %>
+<%= actions do %>
+  <%= link_to 'Add permission', new_space_permission_path(@space) %>
+<% end %>
+<%= render_collection :permissions, @space %>
 
-<%= section_for :audits %>
-<%= render_audits @space %>
+<%= section_for :tags %>
+<%= actions do %>
+  <%= link_to 'Add tag', new_space_tag_path(@space) %>
+<% end %>
+<%= @space.tags %>
+
+<%= section_for :comments, @space.comments.count %>
+<%= actions do %>
+  <%= link_to 'Add comment', new_space_comment_path(@space) %>
+<% end %>
+<%= render_collection :comments, @space %>
+
+<%= section_for :assets, @space.assets.count %>
+<%= actions do %>
+  <%= link_to 'Add asset', new_space_asset_path(@space) %>
+<% end %>
+<%= render_collection :assets, @space %>
+
 
 
 

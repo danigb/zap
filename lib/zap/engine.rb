@@ -2,6 +2,8 @@ require 'rails'
 require 'omniauth'
 require 'sentient_user'
 require 'simple_audit'
+require 'carrierwave'
+require 'acts-as-taggable-on'
 
 module Zap
   class Engine < Rails::Engine

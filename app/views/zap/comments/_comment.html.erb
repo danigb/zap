@@ -1,0 +1,7 @@
+
+<%= div_for comment, :class => "model #{cycle('even', 'odd')}" do %>
+  <%= actions_for [resource,comment], current_user %>
+  <div class="property"><label>Resource: </label><%= comment.resource.name %></div>
+  <div class="property"><label>User: </label><%= link_to_user comment.user %></div>
+  <div class="property"><label>Body: </label><%= comment.body %></div>
+<% end %>

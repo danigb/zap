@@ -6,27 +6,10 @@
   <%= link_to 'Editar', [:edit, @user] %>
 </div>
 
-<ul class="properties">
-  <li>Email: <%= @user.email %></li>
-  <li>Roles: <%= @user.roles %></li>
-</ul>
+<%= properties do %>
+  <%= property @user, :email %>
+  <%= property @user, :roles %>
+<% end %>
 
-<%= render :partial => 'zap/memberships/section', :locals => {:model => @user} %>
-
-<%= section_for Zap::Authorization %>
-<table>
-  <%= thead_for Zap::Authorization, :provider, :uid, :created_at %>
-  <% @user.authorizations.each do |auth| %>
-    <tr>
-      <td><%= auth.provider %></td>
-      <td><%= auth.uid %></td>
-      <td><%= time_ago_in_words auth.created_at %></td>
-    </tr>
-  <% end %>
-</table>
-
-<%= section_for :activity %>
-<%= render_audits @user %>
-
-<%= section_for :audits %>
-<%= render_audits @user %>
+<%= section_for :permissions, @user.permissions.count %>
+<%= render_permissions @user %>

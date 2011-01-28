@@ -1,0 +1,7 @@
+
+
+<%= div_for space, :class => "model #{cycle('even', 'odd')}" do %>
+  <%= actions_for space, current_user %>
+  <div class="name"><%= link_to space.name, space %></div>
+  <div class="property"><label>Description: </label><%= space.description %></div>
+<% end %>

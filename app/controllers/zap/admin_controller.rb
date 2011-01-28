@@ -4,7 +4,7 @@ class Zap::AdminController < ApplicationController
   layout 'zap/admin'
   include Zap::AuthModule
   helper_method :current_user
-  helper Zap::ZapHelper
+  helper Zap::ZapHelper, Zap::ActionsHelper, Zap::RenderHelper
   self.responder = Zap::ZapResponder
   respond_to :html, :xml, :json
   before_filter :require_admin

@@ -58,21 +58,17 @@
           <%= link_to t('zap.actions.login'), login_path %>
         <% end %>
       </div>
-      <div class="container">
+      <div class="container main">
         <div id="sitebar">
           <% if current_user %>
             <ul>
+              <li class="top"><%= link_to 'Users', users_path  %></li>
               <li class="top"><%= link_to 'Spaces', spaces_path  %></li>
-              <% current_user.memberships.admin.each do |m| %>
-                <li><%= link_to m.space.name, m.space %></li>
-              <% end %>
-              <% if current_user.super? %>
-                <li class="top"><%= link_to 'Users', users_path  %></li>
-                <li class="top"><%= link_to 'Ficheros', assets_path  %></li>
-                <li class="top"><%= link_to 'Actividad', audits_path  %></li>
-              <% end %>
-                <li class="top"><%= link_to 'Mailing', audits_path  %></li>
-                <li class="top"><%= link_to 'Invitaciones', audits_path  %></li>
+              <li class="top"><%= link_to 'Ficheros', assets_path  %></li>
+              <li class="top"><%= link_to 'Actividad', audits_path  %></li>
+              <li class="top"><%= link_to 'Mailing', audits_path  %></li>
+              <li class="top"><%= link_to 'Invitaciones', audits_path  %></li>
+              <li class="top"><%= link_to 'Eventos', audits_path  %></li>
             </ul>
           <% end %>
         </div>
